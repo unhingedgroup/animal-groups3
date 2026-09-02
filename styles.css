@@ -86,3 +86,13 @@ select{min-height:48px;border-radius:14px;border:1px solid var(--line);backgroun
   .confetti-piece{display:none}
   .shake{animation:none}
 }
+
+.text-action{
+  border-radius:12px;
+  transition:background .15s ease,color .15s ease;
+}
+.text-action.active-save{
+  background:#2a2418;
+  color:var(--accent);
+  font-weight:800;
+}

@@ -44,3 +44,13 @@ FAVORITES
 - Favorites are saved on the device using local storage.
 - Deck menu now includes Favorites — up to 20 cards per round.
 - Hard Cards still collect missed cards automatically and can also be toggled manually.
+
+
+V5 FIX
+- Fixed Favorite button: it now toggles and persists correctly.
+- Favorite selection visibly changes from ♡ Favorite to ♥ Favorite.
+- Favorite button no longer resets/flips the current card.
+- Favorites deck is functional.
+- All Animals is verified as a full 112-card round.
+- Other decks remain capped at 20 cards.
+- Empty Favorites/Hard decks now show an empty-deck message instead of silently loading all animals.
