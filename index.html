@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#121212">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Animal Groups">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Animal Groups</title>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div>
+      <div class="kicker">Collective noun challenge</div>
+      <h1>Animal Groups</h1>
+    </div>
+    <button id="settingsBtn" class="round-btn" aria-label="Settings">⚙︎</button>
+  </header>
+
+  <section class="hud">
+    <div><span class="hud-label">CARD</span><strong id="progress">1 / 20</strong></div>
+    <div><span class="hud-label">STREAK</span><strong id="streak">0</strong></div>
+    <div><span class="hud-label">SCORE</span><strong id="score">0 / 0</strong></div>
+  </section>
+
+  <section class="scene" id="scene">
+    <article class="card" id="card" tabindex="0" aria-label="Flash card. Tap to flip.">
+      <div class="card-face card-front">
+        <div class="card-meta">
+          <span id="categoryFront" class="badge">Mammal</span>
+          <span id="starsFront" class="stars" aria-label="Weirdness rating">★★★★★</span>
+        </div>
+        <div id="emojiFront" class="animal-art">🦓</div>
+        <div class="small-copy" id="frontLead">A group of</div>
+        <div id="frontMain" class="big-copy">ZEBRAS</div>
+        <div class="tap-copy">TAP TO FLIP</div>
+      </div>
+
+      <div class="card-face card-back">
+        <div class="card-meta">
+          <span id="categoryBack" class="badge">Mammal</span>
+          <span class="back-label">ANSWER</span>
+        </div>
+        <div id="emojiBack" class="animal-art small">🦓</div>
+        <div id="backMain" class="answer-copy">A DAZZLE</div>
+        <div id="backSub" class="sub-copy">of zebras</div>
+        <div class="weird-row">
+          <span>WEIRDNESS</span>
+          <span id="starsBack" class="stars">★★★★★</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="gradeBar" class="grade-bar hidden">
+    <button id="missBtn" class="btn ghost">Missed it</button>
+    <button id="gotBtn" class="btn solid">Got it</button>
+  </section>
+
+  <section class="under-card">
+    <button id="hardBtn" class="text-action">☆ Add to hard cards</button>
+    <button id="skipBtn" class="text-action">Skip →</button>
+  </section>
+
+  <section id="roundDone" class="round-done hidden" aria-live="polite">
+    <div class="trophy">🏆</div>
+    <h2>Round complete</h2>
+    <div id="roundScore" class="round-score">0 / 20</div>
+    <p id="roundMessage"></p>
+    <div class="stack-actions">
+      <button id="newRoundBtn" class="btn solid">Play another 20</button>
+      <button id="practiceMissedBtn" class="btn ghost">Practice missed cards</button>
+    </div>
+  </section>
+
+  <section id="settingsPanel" class="settings hidden">
+    <h2>Game settings</h2>
+    <label>Quiz direction
+      <select id="modeSelect">
+        <option value="animal">Animal → group name</option>
+        <option value="group">Group name → animal</option>
+      </select>
+    </label>
+    <label>Deck
+      <select id="deckSelect">
+        <option value="all">All animals</option>
+        <option value="hard">Hard cards only</option>
+        <option value="mammal">Mammals</option>
+        <option value="bird">Birds</option>
+        <option value="reptile">Reptiles</option>
+        <option value="sea">Sea life</option>
+        <option value="invert">Invertebrates</option>
+      </select>
+    </label>
+    <div class="settings-grid">
+      <button id="shuffleBtn" class="btn ghost">New shuffled round</button>
+      <button id="clearHardBtn" class="btn ghost">Clear hard cards</button>
+    </div>
+    <p class="hint">Swipe left for the next card. Swipe right or tap to flip.</p>
+  </section>
+</main>
+
+<div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
